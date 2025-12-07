@@ -1,0 +1,238 @@
+{
+  "target": "https://bestchange.com",
+  "test_date": "2025-12-07T13:32:18.234011",
+  "intelligence": {
+    "tech_stack": {
+      "server": "nginx",
+      "x-frame-options": "SAMEORIGIN",
+      "strict-transport-security": "max-age=31536000;",
+      "js_framework": "angular"
+    },
+    "waf": {
+      "detected": false,
+      "type": null
+    },
+    "subdomains": [
+      "www.bestchange.com",
+      "api.bestchange.com"
+    ],
+    "endpoints_discovered": 735,
+    "forms_discovered": 3
+  },
+  "vulnerabilities": [
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "innerHTML assignment found with potential user input flow",
+      "code_snippet": "innerHTML = results[2]",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "innerHTML assignment found with potential user input flow",
+      "code_snippet": "innerHTML = '0 ' + lang['bonus_satoshi']",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "innerHTML assignment found with potential user input flow",
+      "code_snippet": "innerHTML = reviewclaimtype == 2 ? lang['info_claimtocancel'] : lang['info_claimtorenew'] ",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "innerHTML assignment found with potential user input flow",
+      "code_snippet": "innerHTML = results[3]",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "innerHTML assignment found with potential user input flow",
+      "code_snippet": "innerHTML = lang['fink_opt_rate_old'] + ' <b>' + rate + '<b>'",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "innerHTML assignment found with potential user input flow",
+      "code_snippet": "innerHTML = lang['fink_opt_rate_old'] + ' <b>' + reserve + '<b>'",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "innerHTML assignment found with potential user input flow",
+      "code_snippet": "innerHTML = lang['fink_opt_fee_old'] + ' <b>' + addfee[1] + ' ' + corraddfeecu.options[i].text + '</",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "innerHTML assignment found with potential user input flow",
+      "code_snippet": "innerHTML = ''",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "innerHTML assignment found with potential user input flow",
+      "code_snippet": "innerHTML = city_lines",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "innerHTML assignment found with potential user input flow",
+      "code_snippet": "innerHTML = '$' + price.toFixed(2)",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "innerHTML assignment found with potential user input flow",
+      "code_snippet": "innerHTML = inputs[i].value",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "eval() usage found with potential user input flow",
+      "code_snippet": "eval(direct + '_curr = direct_sel.value'",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "eval() usage found with potential user input flow",
+      "code_snippet": "eval(sets_vars[i] + ' = \\'' + set_value.replace(/[\\']/, '\\\\\\''",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "eval() usage found with potential user input flow",
+      "code_snippet": "eval('calc_' + obj.name + ' = \\'' + obj.value.replace('\\'', '\\\\\\''",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "eval() usage found with potential user input flow",
+      "code_snippet": "eval(results[3]",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "eval() usage found with potential user input flow",
+      "code_snippet": "eval(direct + '_searched = false'",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "eval() usage found with potential user input flow",
+      "code_snippet": "eval('if (' + adirect + '_searched",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "setTimeout with string found with potential user input flow",
+      "code_snippet": "setTimeout(function () {\n    if (!show_two_box) document.getElementById('twostep_details').className",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "setTimeout with string found with potential user input flow",
+      "code_snippet": "setTimeout(function () {\n    update_rates();\n  }",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "setTimeout with string found with potential user input flow",
+      "code_snippet": "setTimeout(function() {\n      req.abort();\n      req.onreadystatechange = function() {\n        retur",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "setTimeout with string found with potential user input flow",
+      "code_snippet": "setTimeout(function() {\n      req.abort();\n      req.onreadystatechange = function() {\n        retur",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "setTimeout with string found with potential user input flow",
+      "code_snippet": "setTimeout(function() {\n      req.abort();\n      req.onreadystatechange = function() {\n        retur",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "setTimeout with string found with potential user input flow",
+      "code_snippet": "setTimeout(function() {\n      req.abort();\n      req.onreadystatechange = function() {\n        retur",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "setTimeout with string found with potential user input flow",
+      "code_snippet": "setTimeout(function() {\n              close_comment_form();\n              set_status('comment'",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "setTimeout with string found with potential user input flow",
+      "code_snippet": "setTimeout(function () {\n            hide_overlay();\n          }",
+      "confidence": 60
+    },
+    {
+      "type": "DOM XSS (Potential)",
+      "severity": "Medium",
+      "url": "https://bestchange.com/js/main57.js",
+      "evidence": "location assignment found with potential user input flow",
+      "code_snippet": "location=' + encodeURIComponent(window.location.toString()) + '&url=' + url + '&line=' + line + '&co",
+      "confidence": 60
+    }
+  ],
+  "summary": {
+    "total_findings": 26,
+    "critical": 0,
+    "high": 0,
+    "medium": 26
+  }
+}

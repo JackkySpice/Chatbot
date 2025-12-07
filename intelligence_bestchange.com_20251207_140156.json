@@ -1,0 +1,40 @@
+{
+  "target": "https://bestchange.com",
+  "domain": "bestchange.com",
+  "start_time": "2025-12-07T13:47:20.945215",
+  "dns_records": {
+    "A": [
+      "54.37.161.241"
+    ],
+    "MX": [
+      "10 in1-smtp.messagingengine.com.",
+      "20 in2-smtp.messagingengine.com."
+    ],
+    "TXT": [
+      "\"mailru-verification: e4398db81dfc796f\"",
+      "\"facebook-domain-verification=9xmibg265aih3ytg9dn2pd0n6azoyk\"",
+      "\"v=spf1 include:spf.messagingengine.com ip4:54.37.161.241 -all\"",
+      "\"google-site-verification=y-Xu4cRYkV3wg5zPV3npKC9iBWL1_a1PbsPJhPr2PLg\""
+    ],
+    "NS": [
+      "gns21.cloudns.net.",
+      "gns22.cloudns.net.",
+      "gns23.cloudns.net.",
+      "gns24.cloudns.net."
+    ]
+  },
+  "tech_stack": {},
+  "waf_detected": false,
+  "waf_type": null,
+  "endpoints": [],
+  "forms": [],
+  "js_files": [],
+  "secrets_found": [],
+  "api_endpoints": [],
+  "subdomains": [
+    "www.bestchange.com",
+    "api.bestchange.com"
+  ],
+  "vulnerabilities": [],
+  "findings": []
+}
