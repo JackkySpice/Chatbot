@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Team Agent Test Console</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #00ff00;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #ff0000;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #ff0000;
+        }
+        
+        .console {
+            background: #000;
+            border: 2px solid #00ff00;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+            min-height: 400px;
+            overflow-y: auto;
+            font-size: 14px;
+        }
+        
+        .input-area {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        input[type="text"] {
+            flex: 1;
+            background: #000;
+            border: 2px solid #00ff00;
+            color: #00ff00;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            box-shadow: 0 0 10px #00ff00;
+        }
+        
+        button {
+            background: #ff0000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        button:hover {
+            background: #cc0000;
+            box-shadow: 0 0 10px #ff0000;
+        }
+        
+        .log {
+            margin: 5px 0;
+            padding: 5px;
+        }
+        
+        .log.info {
+            color: #00ff00;
+        }
+        
+        .log.warning {
+            color: #ffff00;
+        }
+        
+        .log.error {
+            color: #ff0000;
+        }
+        
+        .log.command {
+            color: #00ffff;
+        }
+        
+        .log.output {
+            color: #ffffff;
+            margin-left: 20px;
+        }
+        
+        .instructions {
+            background: #1a1a1a;
+            border: 1px solid #00ff00;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .instructions h2 {
+            color: #ffff00;
+            margin-bottom: 10px;
+        }
+        
+        .instructions code {
+            background: #000;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔴 RED TEAM AGENT TEST CONSOLE 🔴</h1>
+        
+        <div class="instructions">
+            <h2>Instructions:</h2>
+            <p>1. Enter a target URL in the input field below</p>
+            <p>2. Click "EXECUTE" or press Enter to test the agent</p>
+            <p>3. Or use browser console: <code>testAgent('https://example.com')</code></p>
+            <p>4. Check the console output below for agent analysis</p>
+        </div>
+        
+        <div class="input-area">
+            <input type="text" id="targetInput" placeholder="Enter target URL (e.g., https://example.com)" />
+            <button onclick="executeTest()">EXECUTE</button>
+        </div>
+        
+        <div class="console" id="console">
+            <div class="log info">[SYSTEM] Red Team Agent initialized. Awaiting target...</div>
+            <div class="log info">[SYSTEM] Use the input field above or browser console to test.</div>
+        </div>
+    </div>
+
+    <script>
+        const consoleDiv = document.getElementById('console');
+        const targetInput = document.getElementById('targetInput');
+        
+        function log(message, type = 'info') {
+            const logEntry = document.createElement('div');
+            logEntry.className = `log ${type}`;
+            logEntry.textContent = message;
+            consoleDiv.appendChild(logEntry);
+            consoleDiv.scrollTop = consoleDiv.scrollHeight;
+        }
+        
+        function analyzeTarget(url) {
+            log(`[ANALYSIS] Analyzing target: ${url}`, 'command');
+            
+            // Simulate agent analysis
+            const analysis = {
+                url: url,
+                attackSurface: [],
+                vulnerabilities: [],
+                recommendations: []
+            };
+            
+            // Check if it's a login page
+            if (url.includes('login') || url.includes('auth')) {
+                analysis.attackSurface.push('Authentication endpoint detected');
+                analysis.vulnerabilities.push('Potential: SQL Injection, Brute Force, Session Hijacking');
+                analysis.recommendations.push('Test for SQLi in login form, check for rate limiting');
+            }
+            
+            // Check if it's an API
+            if (url.includes('api') || url.includes('/api/')) {
+                analysis.attackSurface.push('API endpoint detected');
+                analysis.vulnerabilities.push('Potential: IDOR, Broken Authentication, Rate Limiting Bypass');
+                analysis.recommendations.push('Test for IDOR by manipulating IDs, check authentication headers');
+            }
+            
+            // Check for search functionality
+            if (url.includes('search') || url.includes('query')) {
+                analysis.attackSurface.push('Search functionality detected');
+                analysis.vulnerabilities.push('Potential: XSS, SQL Injection, NoSQL Injection');
+                analysis.recommendations.push('Test for XSS with payloads, check for SQLi in search parameters');
+            }
+            
+            // Generic analysis
+            if (analysis.attackSurface.length === 0) {
+                analysis.attackSurface.push('General web application');
+                analysis.vulnerabilities.push('Potential: XSS, CSRF, Information Disclosure, Directory Traversal');
+                analysis.recommendations.push('Perform comprehensive security scan, check headers, test for common vulnerabilities');
+            }
+            
+            return analysis;
+        }
+        
+        function generatePythonScript(analysis) {
+            const script = `#!/usr/bin/env python3
+import requests
+import sys
+import time
+import random
+from urllib.parse import urljoin, urlparse
+
+# Target URL
+TARGET = "${analysis.url}"
+
+# User agents to rotate
+USER_AGENTS = [
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36'
+]
+
+def make_request(url, method='GET', **kwargs):
+    """Make HTTP request with randomized headers and delays"""
+    headers = kwargs.get('headers', {})
+    headers['User-Agent'] = random.choice(USER_AGENTS)
+    kwargs['headers'] = headers
+    
+    # Random delay to avoid rate limiting
+    time.sleep(random.uniform(0.5, 2.0))
+    
+    try:
+        if method.upper() == 'GET':
+            return requests.get(url, timeout=10, **kwargs)
+        elif method.upper() == 'POST':
+            return requests.post(url, timeout=10, **kwargs)
+    except requests.exceptions.RequestException as e:
+        print(f"[ERROR] Request failed: {e}")
+        return None
+
+def test_sql_injection(url):
+    """Test for SQL injection vulnerabilities"""
+    print("[TEST] SQL Injection test...")
+    payloads = ["' OR '1'='1", "' OR 1=1--", "admin'--"]
+    # Implementation would go here
+    return False
+
+def test_xss(url):
+    """Test for XSS vulnerabilities"""
+    print("[TEST] XSS test...")
+    payloads = ["<script>alert('XSS')</script>", "<img src=x onerror=alert(1)>"]
+    # Implementation would go here
+    return False
+
+def main():
+    print(f"[TARGET] {TARGET}")
+    print(f"[ATTACK SURFACE] {', '.join(${JSON.stringify(analysis.attackSurface)})}")
+    print(f"[POTENTIAL VULNS] {', '.join(${JSON.stringify(analysis.vulnerabilities)})}")
+    print("[EXECUTING] Security audit in progress...")
+    
+    # Initial reconnaissance
+    response = make_request(TARGET)
+    if response:
+        print(f"[STATUS] {response.status_code}")
+        print(f"[HEADERS] {dict(response.headers)}")
+    
+    # Run tests based on attack surface
+    # test_sql_injection(TARGET)
+    # test_xss(TARGET)
+    
+    print("[COMPLETE] Audit finished. Review results above.")
+
+if __name__ == "__main__":
+    main()`;
+            
+            return script;
+        }
+        
+        function executeTest() {
+            const url = targetInput.value.trim();
+            if (!url) {
+                log('[ERROR] Please enter a target URL', 'error');
+                return;
+            }
+            
+            // Validate URL format
+            try {
+                new URL(url);
+            } catch (e) {
+                log('[ERROR] Invalid URL format', 'error');
+                return;
+            }
+            
+            log('', 'info');
+            log('='.repeat(60), 'info');
+            log(`[ENGAGEMENT] Target acquired: ${url}`, 'command');
+            log('='.repeat(60), 'info');
+            
+            // Analyze target
+            const analysis = analyzeTarget(url);
+            
+            log('', 'info');
+            log('[INTELLIGENCE] Attack Surface Analysis:', 'warning');
+            analysis.attackSurface.forEach(surface => {
+                log(`  • ${surface}`, 'output');
+            });
+            
+            log('', 'info');
+            log('[INTELLIGENCE] Potential Vulnerabilities:', 'warning');
+            analysis.vulnerabilities.forEach(vuln => {
+                log(`  • ${vuln}`, 'output');
+            });
+            
+            log('', 'info');
+            log('[STRATEGY] Recommended Attack Vectors:', 'warning');
+            analysis.recommendations.forEach(rec => {
+                log(`  • ${rec}`, 'output');
+            });
+            
+            log('', 'info');
+            log('[WEAPON] Generating Python payload...', 'command');
+            const pythonScript = generatePythonScript(analysis);
+            
+            log('', 'info');
+            log('[PYTHON SCRIPT]', 'command');
+            log('─'.repeat(60), 'info');
+            const scriptLines = pythonScript.split('\n');
+            scriptLines.forEach(line => {
+                log(line, 'output');
+            });
+            log('─'.repeat(60), 'info');
+            
+            log('', 'info');
+            log('[COMPLETE] Agent analysis finished. Review output above.', 'info');
+            log('', 'info');
+            
+            // Also log to browser console
+            console.log('Agent Analysis:', analysis);
+            console.log('Python Script:', pythonScript);
+        }
+        
+        // Allow Enter key to execute
+        targetInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                executeTest();
+            }
+        });
+        
+        // Expose function to browser console
+        window.testAgent = function(url) {
+            targetInput.value = url;
+            executeTest();
+        };
+        
+        // Log to browser console
+        console.log('%c🔴 RED TEAM AGENT LOADED 🔴', 'color: red; font-size: 20px; font-weight: bold;');
+        console.log('Use testAgent("https://example.com") to test from console');
+    </script>
+</body>
+</html>
