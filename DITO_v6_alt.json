@@ -1,0 +1,21 @@
+{
+  "payload_mode": 0,
+  "payload": "GET http://0.facebook.com/ HTTP/1.1[crlf]Host: 0.facebook.com[crlf]Connection: Keep-Alive[crlf][crlf]CONNECT [host_port] HTTP/1.1[crlf]Host: 0.facebook.com[crlf]X-Online-Host: 0.facebook.com[crlf][crlf]",
+  "proxy_host": "",
+  "proxy_port": "",
+  "tunnel_type": 0,
+  "connection_mode": 0,
+  "ssh_address": "bore.pub:15893@ditofree:freenet123",
+  "ssh_host": "bore.pub",
+  "ssh_port": 15893,
+  "ssh_username": "ditofree",
+  "ssh_password": "freenet123",
+  "sni_host": "0.facebook.com",
+  "sni": "0.facebook.com",
+  "ssl_sni": "0.facebook.com",
+  "enable_sni": 1,
+  "enable_ssl": 1,
+  "dns_host": "8.8.8.8",
+  "dns_port": 53,
+  "info": "DITO Free - Verified"
+}

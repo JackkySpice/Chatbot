@@ -1,0 +1,17 @@
+{
+  "ssh_host": "bore.pub",
+  "ssh_port": 15893,
+  "username": "ditofree",
+  "password": "freenet123",
+  "payload": "GET http://0.facebook.com/ HTTP/1.1[crlf]Host: 0.facebook.com[crlf]Connection: Keep-Alive[crlf][crlf]CONNECT [host_port] HTTP/1.1[crlf]Host: 0.facebook.com[crlf]X-Online-Host: 0.facebook.com[crlf][crlf]",
+  "sni": "0.facebook.com",
+  "server_name_indication": "0.facebook.com",
+  "enable_sni": true,
+  "enable_ssl": true,
+  "proxy_host": "",
+  "proxy_port": "",
+  "connection_mode": "SSH",
+  "dns_server": "8.8.8.8",
+  "config_name": "DITO Free Internet",
+  "note": "Verified Working SSH"
+}
