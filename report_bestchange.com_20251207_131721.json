@@ -1,0 +1,29 @@
+{
+  "target": "https://bestchange.com",
+  "test_date": "2025-12-07T13:13:59.440313",
+  "intelligence": {
+    "tech_stack": {
+      "server": "nginx",
+      "x-frame-options": "SAMEORIGIN",
+      "strict-transport-security": "max-age=31536000;",
+      "js_framework": "angular"
+    },
+    "waf": {
+      "detected": false,
+      "type": null
+    },
+    "subdomains": [
+      "www.bestchange.com",
+      "api.bestchange.com"
+    ],
+    "endpoints_discovered": 733,
+    "forms_discovered": 3
+  },
+  "vulnerabilities": [],
+  "summary": {
+    "total_findings": 0,
+    "critical": 0,
+    "high": 0,
+    "medium": 0
+  }
+}
