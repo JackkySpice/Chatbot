@@ -1,0 +1,21 @@
+{
+  "hSSHHost": "sg2.jagoanssh.com",
+  "hSSHPort": "22",
+  "hSSHUser": "fastssh.com-jagoanssh",
+  "hSSHPass": "1234",
+  "hPayload": "GET http://0.facebook.com/ HTTP/1.1[crlf]Host: 0.facebook.com[crlf]Connection: Keep-Alive[crlf][crlf]CONNECT [host_port] HTTP/1.1[crlf]Host: 0.facebook.com[crlf]X-Online-Host: 0.facebook.com[crlf][crlf]",
+  "hLockPayload": 0,
+  "hSSLSNI": "0.facebook.com",
+  "hSSL": 1,
+  "hProxyServer": "",
+  "hProxyPort": "",
+  "hRemoteProxy": "",
+  "hConnMode": 1,
+  "hDNS": "8.8.8.8",
+  "hDNSPort": "53",
+  "hUDPgw": "127.0.0.1:7300",
+  "hPingLoop": 0,
+  "hWakeLock": 1,
+  "hConnectRetry": 3,
+  "hInfo": "Combo Front Query (BEST) | MOST RELIABLE - Uses verified free domain with front query | 2025-12-08"
+}
