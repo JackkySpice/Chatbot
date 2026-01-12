@@ -1,0 +1,83 @@
+.class public abstract Landroidx/appcompat/view/menu/c1;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# static fields
+.field public static final a:Landroidx/appcompat/view/menu/co0;
+
+.field public static b:Landroidx/appcompat/view/menu/co0$b;
+
+.field public static c:Landroidx/appcompat/view/menu/co0$b;
+
+.field public static d:Landroidx/appcompat/view/menu/co0$b;
+
+.field public static e:Landroidx/appcompat/view/menu/co0$b;
+
+.field public static f:Landroidx/appcompat/view/menu/co0$b;
+
+.field public static g:Landroidx/appcompat/view/menu/co0$b;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    const-string v0, "android.app.Activity"
+
+    invoke-static {v0}, Landroidx/appcompat/view/menu/co0;->w(Ljava/lang/String;)Landroidx/appcompat/view/menu/co0;
+
+    move-result-object v0
+
+    sput-object v0, Landroidx/appcompat/view/menu/c1;->a:Landroidx/appcompat/view/menu/co0;
+
+    const-string v1, "mActivityInfo"
+
+    invoke-virtual {v0, v1}, Landroidx/appcompat/view/menu/co0;->e(Ljava/lang/String;)Landroidx/appcompat/view/menu/co0$b;
+
+    move-result-object v1
+
+    sput-object v1, Landroidx/appcompat/view/menu/c1;->b:Landroidx/appcompat/view/menu/co0$b;
+
+    const-string v1, "mFinished"
+
+    invoke-virtual {v0, v1}, Landroidx/appcompat/view/menu/co0;->e(Ljava/lang/String;)Landroidx/appcompat/view/menu/co0$b;
+
+    move-result-object v1
+
+    sput-object v1, Landroidx/appcompat/view/menu/c1;->c:Landroidx/appcompat/view/menu/co0$b;
+
+    const-string v1, "mParent"
+
+    invoke-virtual {v0, v1}, Landroidx/appcompat/view/menu/co0;->e(Ljava/lang/String;)Landroidx/appcompat/view/menu/co0$b;
+
+    move-result-object v1
+
+    sput-object v1, Landroidx/appcompat/view/menu/c1;->d:Landroidx/appcompat/view/menu/co0$b;
+
+    const-string v1, "mResultCode"
+
+    invoke-virtual {v0, v1}, Landroidx/appcompat/view/menu/co0;->e(Ljava/lang/String;)Landroidx/appcompat/view/menu/co0$b;
+
+    move-result-object v1
+
+    sput-object v1, Landroidx/appcompat/view/menu/c1;->e:Landroidx/appcompat/view/menu/co0$b;
+
+    const-string v1, "mResultData"
+
+    invoke-virtual {v0, v1}, Landroidx/appcompat/view/menu/co0;->e(Ljava/lang/String;)Landroidx/appcompat/view/menu/co0$b;
+
+    move-result-object v1
+
+    sput-object v1, Landroidx/appcompat/view/menu/c1;->f:Landroidx/appcompat/view/menu/co0$b;
+
+    const-string v1, "mToken"
+
+    invoke-virtual {v0, v1}, Landroidx/appcompat/view/menu/co0;->e(Ljava/lang/String;)Landroidx/appcompat/view/menu/co0$b;
+
+    move-result-object v0
+
+    sput-object v0, Landroidx/appcompat/view/menu/c1;->g:Landroidx/appcompat/view/menu/co0$b;
+
+    return-void
+.end method
